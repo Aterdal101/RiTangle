@@ -1,0 +1,17 @@
+import itertools
+
+def calculate_probability():
+    count = 0
+    total_permutations = 0
+
+    for permutation in itertools.permutations(range(1, 9)):
+        a, b, c, d, e, f, g, h = permutation
+        if a * b * c * d * e < f * g * h:
+            count += 1
+        total_permutations += 1
+
+    probability = count / total_permutations
+    return probability
+
+probability = calculate_probability()
+print(probability)
